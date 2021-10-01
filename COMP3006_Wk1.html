@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+        <style>
+            /* Your CSS code goes here. */
+
+            .main {
+                width: 250px;
+                background-color:#d0d0d0 ;
+            }
+
+            .light {
+                width: 50px;
+                height: 50px;
+                background-color:#00ffff;
+            }
+
+            #burn {
+                width: 150px;
+                font-weight: bold;
+            }
+
+        </style>
+
+        <script>
+            // $(window).on("load", function() {
+            //     document.querySelector(".light")
+            // });
+
+            // window.onload = function() {
+            //     alert("Hello world - from JavaScript")
+            // }
+
+            // function myFunction() {
+            //     document.querySelector(".light").style.backgroundColor = "#ffff00";
+            // }
+
+            // function myFunctiontwo() {
+            //     document.querySelector(".light").style.backgroundColor = " #ff00ff";
+            // }
+
+            var place=0
+
+            function myFunction() {
+                var colorList = ["#ffff00", "#ff00ff", " #00ffff"];
+
+                document.querySelector(".light").style.backgroundColor = colorList[place]
+                place++
+                if (place ===colorList.length) place=0
+            }
+
+
+        </script>
+    </head>
+
+    <body>
+        <!-- Do not edit this section. -->
+        <div id="mocha"></div>
+    
+        <script src="https://unpkg.com/chai/chai.js"></script>
+        <script src="https://unpkg.com/mocha/mocha.js"></script>
+    
+        <script class="mocha-init">
+            mocha.setup('tdd');
+            mocha.checkLeaks();
+        </script>
+        
+        <script src="COMP3006_Wk1_Tests.js"></script>
+        
+        <script class="mocha-exec">
+            mocha.run();
+        </script>
+        
+        <!-- Your HTML code goes here. -->
+
+    <div class="main">
+        <div class="light">
+            <button onclick="myFunction()" id="burn">Burn!</button>
+        </div>
+    </div>
+
+    </body>
+</html>
