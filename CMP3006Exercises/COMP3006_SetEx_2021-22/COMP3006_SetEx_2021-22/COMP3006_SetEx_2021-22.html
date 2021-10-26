@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="sessions.js"></script>
+
+        <title>Timetable Viewer</title>
+
+        <style>
+             /*Your CSS code goes here.*/
+            body {
+                background-color: #99ffff;
+                font-family: "verdana";
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .day {
+                border: solid #000;
+                border-width: 1px;
+                float: left;
+                width: 19%;
+            }
+
+            .session {
+                background-color: #dfdfdf;
+                width: 80%;
+                height: 120px;
+                margin: 5%;
+                padding: 5%;
+            }
+
+            ul#errors {
+                color: #ff0000;
+            }
+        </style>
+
+        <script>
+            // Classes/functions go here.
+
+            class Session {
+                constructor(title, sessionTime, staff) {
+                    this.title = title;
+                    this.sessionTime = sessionTime;
+                    this.staff = staff;
+
+                    function getSessionId() {
+
+                    }
+                }
+            }
+            
+            class Timetable {
+                sessions = [];
+            }
+
+
+            $(window).on("load", function() {
+                // Application code to run when the page has loaded goes here
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <!-- Do not edit this section. -->
+        <div id="mocha"></div>
+    
+        <script src="https://unpkg.com/chai/chai.js"></script>
+        <script src="https://unpkg.com/mocha/mocha.js"></script>
+    
+        <script class="mocha-init">
+            mocha.setup('tdd');
+            mocha.checkLeaks();
+        </script>
+        
+        <script src="COMP3006_SetEx_2021-22_Tests.js"></script>
+        
+        <script class="mocha-exec">
+            mocha.run();
+        </script>
+
+        <!-- Your HTML goes here. -->
+        <h1>Timetable Viewer</h1>
+
+        <div id="timetable">
+
+            <div class="day" id="mon">
+                <p>Monday</p>
+
+                <div class="session" id="mon_9">
+                    <p>9am</p>
+                </div>
+                <div class="session" id="mon_11">
+                    <p>11am</p>
+                </div>
+                <div class="session" id="mon_14">
+                    <p>2pm</p>
+                </div>
+                <div class="session" id="mon_16">
+                    <p>4pm</p>
+                </div>
+            </div>
+
+            <div class="day" id="tue">
+                <p>Tuesday</p>
+
+                <div class="session" id="tue_9">
+                    <p>9am</p>
+                </div>
+                <div class="session" id="tue_11">
+                    <p>11am</p>
+                </div>
+                <div class="session" id="tue_14">
+                    <p>2pm</p>
+                </div>
+                <div class="session" id="tue_16">
+                    <p>4pm</p>
+                </div>
+            </div>
+
+            <div class="day" id="wed">
+                <p>Wednesday</p>
+
+                <div class="session" id="wed_9">
+                    <p>9am</p>
+                </div>
+                <div class="session" id="wed_11">
+                    <p>11am</p>
+                </div>
+                <div class="session" id="wed_14">
+                    <p>2pm</p>
+                </div>
+                <div class="session" id="wed_16">
+                    <p>4pm</p>
+                </div>
+            </div>
+
+            <div class="day" id="thu">
+                <p>Thursday</p>
+
+                <div class="session" id="thu_9">
+                    <p>9am</p>
+                </div>
+                <div class="session" id="thu_11">
+                    <p>11am</p>
+                </div>
+                <div class="session" id="thu_14">
+                    <p>2pm</p>
+                </div>
+                <div class="session" id="thu_16">
+                    <p>4pm</p>
+                </div>
+            </div>
+
+            <div class="day" id="fri">
+                <p>Friday</p>
+
+                <div class="session" id="fri_9">
+                    <p>9am</p>
+                </div>
+                <div class="session" id="fri_11">
+                    <p>11am</p>
+                </div>
+                <div class="session" id="fri_14">
+                    <p>2pm</p>
+                </div>
+                <div class="session" id="fri_16">
+                    <p>4pm</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Errors</h2>
+
+        <ul id="errors"></ul>
+
+        <button id="display">Display Sessions</button>
+
+        <button id="clear">Clear Sessions</button>
+    </body>
+</html>
