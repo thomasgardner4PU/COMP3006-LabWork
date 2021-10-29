@@ -39,31 +39,73 @@
             ul#errors {
                 color: #ff0000;
             }
+            .active {
+                background-color: #f0fbfc;
+            }
         </style>
 
         <script>
             // Classes/functions go here.
-
             class Session {
                 constructor(title, sessionTime, staff) {
                     this.title = title;
                     this.sessionTime = sessionTime;
                     this.staff = staff;
+                    this.active = false;
                 }
 
                 getSessionId(){
-                    return this.sessionTime
+                    let d = this.sessionTime;
+                    let days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+                    let day = days[d.getDay()];d
+
+                    let hour = this.sessionTime.getHours();
+                    let id = `${day}_${hour}`
+
+                    return id;
+                }
+
+                renderSession(){
+                    this.active = true;
+                    const tue9Title  = document.createElement("p")
+                    tue9Title.id = this.title;
+                    tue9Title.innerText = "COMP3006 Lecture"
+
+
+                    const tue9Staff = document.createElement("p")
+                    tue9Staff.id = "tue_9_staff";
+                    tue9Staff.innerText = "David Walker"
+
+                    tue9Title.classList.add("active")
+                    tue9Title.id = this.getSessionId();
+
+                    tue9Title.style.color = "#f0fbfc";
+
+
+                    const test = document.createElement("div")
+                    test.id =  this.getSessionId();
+                    test.classList.add("session")
+                    test.appendChild(tue9Title)
+                    test.appendChild(tue9Staff)
+                    test.classList.add("active")
+
+                    let d = this.sessionTime;
+                    let days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+                    let day = days[d.getDay()];
+
+                    let dayel = document.getElementById(day);
+                    dayel.appendChild(test);
                 }
 
             }
             
             class Timetable {
-                constructor() {
-                    sessions = [];
-                    sessions.push()
-                }
+
+                sessions = []
 
             }
+
+
 
 
             $(window).on("load", function() {
