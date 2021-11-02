@@ -1,1 +1,1 @@
-# COMP3006-LabWork
+# COMP3006-LabWork and SetExercises
