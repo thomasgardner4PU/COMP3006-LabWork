@@ -115,6 +115,12 @@
                     }
                 }
 
+                clearTimetable() {
+                    for (let i = 0; i < this.sessions.length; i++) {
+                        this.sessions[i].clearSession(); // clears the session from the session class
+                    }
+                }
+
             }
 
 
