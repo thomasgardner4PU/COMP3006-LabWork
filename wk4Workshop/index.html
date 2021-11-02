@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Exercise 1</title>
+
+    <style>
+        /* Your CSS code goes here. */
+
+        div {
+            background-color: lightgrey;
+            width: 300px;
+            border: 15px solid green;
+            padding: 50px;
+            margin: 20px;
+        }
+    </style>
+
+
+    <script>
+
+        $(window).on("load", function() {
+
+            let courseName = "COMP3006 Full Stack Development";
+
+            // localStorage.personName = courseName;
+            //
+            // alert(localStorage.personName);
+
+            if (localStorage.personName === undefined) {
+                localStorage.personName = courseName;
+            } else {
+                alert(localStorage.personName);
+            }
+
+        });
+
+    </script>
+</head>
+<body>
+
+
+
+
+<div id="firstBox">
+
+    <form action="/action_page.php">
+        <label for="fname1">Module code:</label><br>
+        <input type="text" id="fname1" name="fname" value=""><br>
+        <label for="lname1">Module Name:</label><br>
+        <input type="text" id="lname1" name="lname" value=""><br><br>
+        <input type="submit" value="Save">
+    </form>
+
+</div>
+
+<div id="secondBox">
+
+    <form action="/action_page.php">
+        <label for="fname2">Module code:</label><br>
+        <input type="text" id="fname2" name="fname" value=""><br>
+        <label for="lname2">Module Name:</label><br>
+        <input type="text" id="lname2" name="lname" value=""><br><br>
+        <input type="submit" value="Save">
+    </form>
+
+</div>
+
+
+
+</body>
+</html>
