@@ -75,6 +75,12 @@
                     let tue_9_staff = document.createElement("p")
                     tue_9_staff.innerText = this.staff;
                     tue_9_staff.id = `${this.getSessionId()}_staff`;
+
+                    let parent = document.getElementById(this.getSessionId());
+
+                    parent.appendChild(tue_9_staff);
+                    parent.appendChild(tue_9_title);
+                    parent.classList.add("active");
                 }
 
             }
