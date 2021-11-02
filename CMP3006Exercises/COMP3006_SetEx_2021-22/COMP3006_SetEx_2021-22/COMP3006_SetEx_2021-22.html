@@ -107,6 +107,14 @@
 
                 sessions = []
 
+
+                displayTimetable(){
+                    for (let i = 0; i < this.sessions.length; i++) { //creating a variable called 'i' and initialzing it as 0 and whilst i is less then the length of the array, I am adding 1 to 'i'
+                        this.sessions[i].renderSession(); // creates the session from the session class
+
+                    }
+                }
+
             }
 
 
