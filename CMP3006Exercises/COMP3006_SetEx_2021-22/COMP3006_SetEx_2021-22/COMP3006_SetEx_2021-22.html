@@ -66,35 +66,15 @@
                 }
 
                 renderSession(){
-                    this.active = true;
-                    const tue9Title  = document.createElement("p")
-                    tue9Title.id = this.title;
-                    tue9Title.innerText = "COMP3006 Lecture"
+                    // para 1
+                    let tue_9_title = document.createElement("p")
+                    tue_9_title.innerText = this.title;
+                    tue_9_title.id = `${this.getSessionId()}_title`;
 
-
-                    const tue9Staff = document.createElement("p")
-                    tue9Staff.id = "tue_9_staff";
-                    tue9Staff.innerText = "David Walker"
-
-                    tue9Title.classList.add("active")
-                    tue9Title.id = this.getSessionId();
-
-                    tue9Title.style.color = "#f0fbfc";
-
-
-                    const test = document.createElement("div")
-                    test.id =  this.getSessionId();
-                    test.classList.add("session")
-                    test.appendChild(tue9Title)
-                    test.appendChild(tue9Staff)
-                    test.classList.add("active")
-
-                    let d = this.sessionTime;
-                    let days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
-                    let day = days[d.getDay()];
-
-                    let dayel = document.getElementById(day);
-                    dayel.appendChild(test);
+                    // para2
+                    let tue_9_staff = document.createElement("p")
+                    tue_9_staff.innerText = this.staff;
+                    tue_9_staff.id = `${this.getSessionId()}_staff`;
                 }
 
             }
