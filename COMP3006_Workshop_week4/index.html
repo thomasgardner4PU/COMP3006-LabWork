@@ -22,54 +22,41 @@
 
     <script>
 
-        $(window).on("load", function() {
+        function saveData(){
+            let modName = document.getElementById("mod-name").value;
+            localStorage.setItem("ModuleName", modName);
 
-            let courseName = "COMP3006 Full Stack Development";
+            let modCode = document.getElementById("mod-code").value;
+            localStorage.setItem("ModuleCode", modCode);
 
-            // localStorage.personName = courseName;
-            //
-            // alert(localStorage.personName);
+            document.getElementById("mod-name").value = localStorage.getItem("ModuleName")
+            document.getElementById("mod-code").value = localStorage.getItem("ModuleCode")
 
-            if (localStorage.personName === undefined) {
-                localStorage.personName = courseName;
-            } else {
-                alert(localStorage.personName);
-            }
 
-        });
+            console.log("data is here")
+
+            let display = document.getElementById("demo");
+            display.innerText = `${modName} ${modCode}`;
+
+        }
+
+
 
     </script>
 </head>
 <body>
 
+<div>
+    <label for="mod-name">Module Name:</label>
+    <input type="text" id="mod-name" name="mod-name">
 
+    <label for="mod-code">Module Code:</label>
+    <input type="text" id="mod-code" name="mod-code">
 
+    <button onclick="saveData()" type="button">Save</button>
 
-<div id="firstBox">
-
-    <form action="/action_page.php">
-        <label for="fname1">Module code:</label><br>
-        <input type="text" id="fname1" name="fname" value=""><br>
-        <label for="lname1">Module Name:</label><br>
-        <input type="text" id="lname1" name="lname" value=""><br><br>
-        <input type="submit" value="Save">
-    </form>
-
+    ,<p id="demo"></p>
 </div>
-
-<div id="secondBox">
-
-    <form action="/action_page.php">
-        <label for="fname2">Module code:</label><br>
-        <input type="text" id="fname2" name="fname" value=""><br>
-        <label for="lname2">Module Name:</label><br>
-        <input type="text" id="lname2" name="lname" value=""><br><br>
-        <input type="submit" value="Save">
-    </form>
-
-</div>
-
-
 
 </body>
 </html>
