@@ -18,19 +18,23 @@
         // function test(e) {
         //
         // }
-        document.addEventListener("load", e => {
+        window.onload = function () {
 
+            // document.addEventListener("load", e => {
+            //
+            //
+            // })
             let worker = new Worker("/helloWorker.js");
 
             worker.addEventListener("message", function (evt) {
                 let msg = evt.data;
 
-                document.getElementById("messagePar").innerText += msg;
+                document.getElementById("messagePar").append(msg);
             })
 
             worker.postMessage("David");
-        })
 
+        }
     </script>
 </head>
 <body>
