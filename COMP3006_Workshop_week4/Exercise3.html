@@ -5,10 +5,36 @@
     <title>Exercise 3</title>
 
     <style>
-        
+        #room {
+            background-color: #CFCFCF;
+            border: solid #000;
+            border-width: 1px;
+            width: 360px;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .seat {
+            width: 10px;
+            min-height: 100px;
+            margin: 10px;
+            float: left;
+            background-color: #00CC00;
+        }
+
+        .booked {
+            background-color: #CC0000;
+        }
     </style>
 
     <script>
+
+        $(function (){
+
+            
+            let var1 = document.getElementsByClassName("seat");
+
+        })
 
     </script>
 
@@ -16,7 +42,7 @@
 <body>
     <h1>Seating Planner</h1>
 
-<div id="Planner">
+<div id="room">
     <div class="seat" id="seat1">
 
     </div>
