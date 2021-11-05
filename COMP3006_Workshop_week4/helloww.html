@@ -2,10 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <title>Exercise 2</title>
+
+
+    <style>
+
+    </style>
+
+    <script>
+        // let test = (e) => {}
+        //
+        // function test(e) {
+        //
+        // }
+        document.addEventListener("load", e => {
+
+            let worker = new Worker("/helloWorker.js");
+
+            worker.addEventListener("message", function (evt) {
+                let msg = evt.data;
+
+                document.getElementById("messagePar").innerText += msg;
+            })
+
+            worker.postMessage("David");
+        })
+
+    </script>
 </head>
 <body>
 
+<div>
+    <p id="messagePar">Result:</p>
+</div>
 
 </body>
 </html>
