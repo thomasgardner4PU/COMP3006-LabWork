@@ -32,15 +32,23 @@
 
     <script>
 
-        $(function (){
-            $(".seat").click(function (){
-                $(this).toggleClass("booked");
+        // $(function (){
+        //     $(".seat").click(function (){
+        //         $(this).toggleClass("booked");
+        //
+        //         if ($(this).hasClass("booked")) {
+        //             $("seat1").append()
+        //         }
+        //     });
+        // })
 
-                if ($(this).hasClass("booked")) {
-                    $("seat1").append()
-                }
+        $(document).ready(function (){
+            $("button").click(function (){
+                $("seat1", "seat2", "seat7").toggleClass("booked");
             });
+
         })
+
 
 
     </script>
@@ -78,5 +86,7 @@
 
     </div>
 </div>
+
+<button>Change colour</button>
 </body>
 </html>
