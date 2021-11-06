@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <title>Exercise 3</title>
 
@@ -15,7 +18,7 @@
         }
 
         .seat {
-            width: 10px;
+            width: 100px;
             min-height: 100px;
             margin: 10px;
             float: left;
@@ -30,11 +33,15 @@
     <script>
 
         $(function (){
+            $(".seat").click(function (){
+                $(this).toggleClass("booked");
 
-            
-            let var1 = document.getElementsByClassName("seat");
-
+                if ($(this).hasClass("booked")) {
+                    $("seat1").append()
+                }
+            });
         })
+
 
     </script>
 
