@@ -32,22 +32,22 @@
 
     <script>
 
+        $(function (){
+            $(".seat").click(function (){
+                $(this).toggleClass("booked");
+
+                if ($(this).hasClass("booked")) {
+                    $("seat1").append()
+                }
+            });
+        })
+
         // $(function (){
         //     $(".seat").click(function (){
         //         $(this).toggleClass("booked");
-        //
-        //         if ($(this).hasClass("booked")) {
-        //             $("seat1").append()
-        //         }
         //     });
+        //
         // })
-
-        $(document).ready(function (){
-            $("button").click(function (){
-                $("seat1", "seat2", "seat7").toggleClass("booked");
-            });
-
-        })
 
 
 
@@ -86,7 +86,5 @@
 
     </div>
 </div>
-
-<button>Change colour</button>
 </body>
 </html>
