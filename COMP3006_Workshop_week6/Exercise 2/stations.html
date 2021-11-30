@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Station sign</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<style>
+    /*Your CSS code goes here.*/
+
+    table {
+        font-size: 32px;
+        font-family: Arial,serif;
+        text-align: left;
+    }
+
+    th {
+        background-color: blue;
+        color: white;
+    }
+
+    tbody {
+        background-color: black;
+    }
+
+    table th {
+        color: white;
+    }
+
+</style>
+
+<script>
+    // Classes/functions go here.
+
+    $(function() {
+
+        let url = "https://comp3006-stations.herokuapp.com/";
+        $.get(url, function(trains) {
+            for (i=0; i<trains.trains.length; i++) {
+                let train = trains.trains[i];
+                let stops = train.stops;
+                let destination = stops[stops.length-1];
+
+                $("#services").append("<tr><td class=\"departs\">"
+                    + train.departs + "</td><td class=\"destination\">"
+                    + destination.name + "</td><td class=\"platform\">"
+                    + train.platform + "</td></tr>"
+                );
+            }
+        });
+
+    });
+
+</script>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Destination</th>
+                <th>Platform</th>
+            </tr>
+        </thead>
+        <tbody id="services"></tbody>
+    </table>
+
+</body>
+</html>
